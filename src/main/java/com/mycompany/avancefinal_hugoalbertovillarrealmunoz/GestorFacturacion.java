@@ -3,6 +3,7 @@ package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
 import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
+import java.awt.Image;
 
 public class GestorFacturacion {
 
@@ -13,7 +14,11 @@ public class GestorFacturacion {
     }
 
     public void mostrarFacturacion() {
-        // Filtrar pedidos que estén en estado "Listo"
+
+        ImageIcon iconoOriginal = new ImageIcon(GestorFacturacion.class.getResource("/images/hamburguesa.png"));
+        Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(imagenEscalada);
+
         List<Pedido> pedidosListos = new ArrayList<>();
         for (Pedido p : pedidos) {
             if (p.getEstado().equals("Listo")) {
@@ -22,17 +27,15 @@ public class GestorFacturacion {
         }
 
         if (pedidosListos.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "No hay pedidos listos para facturar.");
+            JOptionPane.showMessageDialog(null, "No hay pedidos listos para facturar.", "Información", JOptionPane.INFORMATION_MESSAGE, icono);
             return;
         }
 
-        // Llamar a la interfaz para seleccionar el pedido
         Pedido pedidoSeleccionado = InterfazFacturacion.seleccionarPedidoParaFacturar(pedidosListos);
         if (pedidoSeleccionado == null) {
-            return; // Si el usuario cancela, no hace nada
+            return;
         }
 
-        // Llamar a la interfaz para mostrar la factura
         InterfazFacturacion.mostrarFactura(pedidoSeleccionado);
     }
 }

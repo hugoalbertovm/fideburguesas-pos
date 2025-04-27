@@ -24,7 +24,19 @@ public class InterfazPedido {
         JTextField precioField = new JTextField();
         panel.add(precioField);
 
-        int opcion = JOptionPane.showConfirmDialog(null, panel, "Registrar Pedido", JOptionPane.OK_CANCEL_OPTION);
+        ImageIcon iconoOriginal = new ImageIcon(InterfazPedido.class.getResource("/images/hamburguesa.png"));
+        Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(imagenEscalada);
+
+        int opcion = JOptionPane.showConfirmDialog(
+                null,
+                panel,
+                "Registrar Pedido",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                icono
+        );
+
         if (opcion == JOptionPane.OK_OPTION) {
             return new String[]{
                 clienteField.getText().trim(),
@@ -33,6 +45,6 @@ public class InterfazPedido {
                 precioField.getText().trim()
             };
         }
-        return null; // Si se cancela, retorna null
+        return null;
     }
 }

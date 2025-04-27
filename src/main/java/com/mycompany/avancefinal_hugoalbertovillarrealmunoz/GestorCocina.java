@@ -1,5 +1,6 @@
 package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
 
+import java.awt.Image;
 import javax.swing.*;
 import java.util.List;
 
@@ -13,22 +14,31 @@ public class GestorCocina {
 
     public void mostrarPedidosCocina() {
         if (pedidos.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "No hay pedidos registrados.");
+            ImageIcon iconoOriginal = new ImageIcon(GestorCocina.class.getResource("/images/hamburguesa.png"));
+            Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+            ImageIcon icono = new ImageIcon(imagenEscalada);
+
+            JOptionPane.showMessageDialog(null, "No hay pedidos registrados.", "Información", JOptionPane.INFORMATION_MESSAGE, icono);
             return;
         }
 
-        while (true) { // Mantiene la pantalla activa hasta que el usuario decida salir
+        while (true) {
             Pedido pedidoSeleccionado = InterfazCocina.seleccionarPedido(pedidos);
             if (pedidoSeleccionado == null) {
-                return; // Si el usuario elige "Regresar al menú", sale
+                return;
             }
 
-            // Mostrar ventana para actualizar estado
             String nuevoEstado = InterfazCocina.actualizarEstadoPedido(pedidoSeleccionado);
             if (nuevoEstado != null) {
                 pedidoSeleccionado.actualizarEstado(nuevoEstado);
-                JOptionPane.showMessageDialog(null, "El pedido ha sido actualizado a: " + pedidoSeleccionado.getEstado());
+
+                ImageIcon iconoOriginal = new ImageIcon(GestorCocina.class.getResource("/images/hamburguesa.png"));
+                Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+                ImageIcon icono = new ImageIcon(imagenEscalada);
+
+                JOptionPane.showMessageDialog(null, "El pedido ha sido actualizado a: " + pedidoSeleccionado.getEstado(), "Actualización Exitosa", JOptionPane.INFORMATION_MESSAGE, icono);
             }
         }
     }
+
 }

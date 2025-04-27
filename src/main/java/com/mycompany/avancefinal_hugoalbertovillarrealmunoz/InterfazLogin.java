@@ -15,7 +15,19 @@ public class InterfazLogin {
         JPasswordField contrasenaField = new JPasswordField();
         panel.add(contrasenaField);
 
-        int opcion = JOptionPane.showConfirmDialog(null, panel, "Iniciar Sesión", JOptionPane.OK_CANCEL_OPTION);
+        ImageIcon iconoOriginal = new ImageIcon(InterfazLogin.class.getResource("/images/hamburguesa.png"));
+        Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(imagenEscalada);
+
+        int opcion = JOptionPane.showConfirmDialog(
+                null,
+                panel,
+                "Iniciar Sesión",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                icono
+        );
+
         if (opcion == JOptionPane.OK_OPTION) {
             String usuario = usuarioField.getText().trim();
             String contrasena = new String(contrasenaField.getPassword()).trim();

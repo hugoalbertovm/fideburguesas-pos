@@ -1,14 +1,16 @@
 package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.ImageIcon;
 
 public class MenuPrincipal {
 
     public static void main(String[] args) {
-        
+
         ConexionBD.crearTablas();
-        
+
         List<Pedido> pedidos = new ArrayList<>();
         List<Cajero> cajeros = new ArrayList<>();
 
@@ -18,6 +20,10 @@ public class MenuPrincipal {
         GestorLogin gestorLogin = new GestorLogin(cajeros);
         GestorRegistro gestorRegistro = new GestorRegistro(cajeros);
 
+        ImageIcon iconoOriginal = new ImageIcon(MenuPrincipal.class.getResource("/images/hamburguesa.png"));
+        Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(imagenEscalada);
+
         while (true) {
             String[] opciones = {
                 "Registrar Cajero", "Iniciar Sesión", "Registrar Pedido",
@@ -26,7 +32,7 @@ public class MenuPrincipal {
 
             String seleccion = (String) javax.swing.JOptionPane.showInputDialog(
                     null, "Seleccione una opción:", "Sistema POS - FideBurguesas",
-                    javax.swing.JOptionPane.QUESTION_MESSAGE, null, opciones, opciones[0]
+                    javax.swing.JOptionPane.QUESTION_MESSAGE, icono, opciones, opciones[0]
             );
 
             if (seleccion == null || seleccion.equals("Salir")) {

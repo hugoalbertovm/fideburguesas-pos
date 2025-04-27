@@ -1,6 +1,7 @@
 package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
 
 import javax.swing.*;
+import java.awt.Image;
 import java.util.List;
 
 public class GestorPedido {
@@ -12,8 +13,13 @@ public class GestorPedido {
     }
 
     public void registrarPedido(Cajero usuarioActual) {
+
+        ImageIcon iconoOriginal = new ImageIcon(GestorPedido.class.getResource("/images/hamburguesa.png"));
+        Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(imagenEscalada);
+
         if (usuarioActual == null) {
-            JOptionPane.showMessageDialog(null, "Debe iniciar sesión primero.");
+            JOptionPane.showMessageDialog(null, "Debe iniciar sesión primero.", "Error", JOptionPane.ERROR_MESSAGE, icono);
             return;
         }
 
@@ -28,7 +34,7 @@ public class GestorPedido {
         String precioStr = datos[3];
 
         if (cliente.isEmpty() || producto.isEmpty() || cantidadStr.isEmpty() || precioStr.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.");
+            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.", "Advertencia", JOptionPane.WARNING_MESSAGE, icono);
             return;
         }
 
@@ -41,7 +47,7 @@ public class GestorPedido {
                 throw new NumberFormatException();
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Ingrese una cantidad y un precio válidos.");
+            JOptionPane.showMessageDialog(null, "Ingrese una cantidad y un precio válidos.", "Advertencia", JOptionPane.WARNING_MESSAGE, icono);
             return;
         }
 
@@ -54,6 +60,6 @@ public class GestorPedido {
 
         pedidos.add(nuevoPedido);
         ConexionBD.insertarPedido("Cliente: " + cliente + ", Producto: " + producto + ", Cantidad: " + cantidad + ", Precio: " + precio);
-        JOptionPane.showMessageDialog(null, "Pedido registrado exitosamente.");
+        JOptionPane.showMessageDialog(null, "Pedido registrado exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE, icono);
     }
 }

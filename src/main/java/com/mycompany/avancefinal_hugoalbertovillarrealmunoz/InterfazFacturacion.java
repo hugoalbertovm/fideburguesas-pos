@@ -7,25 +7,28 @@ import java.util.List;
 public class InterfazFacturacion {
 
     public static Pedido seleccionarPedidoParaFacturar(List<Pedido> pedidosListos) {
-        // Crear una lista con los pedidos disponibles
+
         String[] listaPedidos = new String[pedidosListos.size()];
         for (int i = 0; i < pedidosListos.size(); i++) {
             listaPedidos[i] = "Pedido #" + pedidosListos.get(i).getIdPedido() + " - Cliente: " + pedidosListos.get(i).getCliente();
         }
 
-        // Mostrar un JComboBox para seleccionar el pedido
         JComboBox<String> pedidoBox = new JComboBox<>(listaPedidos);
         JPanel panelSeleccion = new JPanel();
         panelSeleccion.add(new JLabel("Seleccione un pedido para facturar:"));
         panelSeleccion.add(pedidoBox);
 
+        ImageIcon iconoOriginal = new ImageIcon(InterfazFacturacion.class.getResource("/images/hamburguesa.png"));
+        Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(imagenEscalada);
+
         int opcionSeleccion = JOptionPane.showConfirmDialog(
-                null, panelSeleccion, "Seleccionar Pedido", JOptionPane.OK_CANCEL_OPTION);
+                null, panelSeleccion, "Seleccionar Pedido", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, icono);
 
         if (opcionSeleccion == JOptionPane.OK_OPTION) {
             return pedidosListos.get(pedidoBox.getSelectedIndex());
         }
-        return null; // Si se cancela, retorna null
+        return null;
     }
 
     public static void mostrarFactura(Pedido pedido) {
@@ -51,6 +54,10 @@ public class InterfazFacturacion {
         totalField.setEditable(false);
         panel.add(totalField);
 
-        JOptionPane.showConfirmDialog(null, panel, "Facturación", JOptionPane.DEFAULT_OPTION);
+        ImageIcon iconoOriginal = new ImageIcon(InterfazFacturacion.class.getResource("/images/hamburguesa.png"));
+        Image imagenEscalada = iconoOriginal.getImage().getScaledInstance(64, 64, Image.SCALE_SMOOTH);
+        ImageIcon icono = new ImageIcon(imagenEscalada);
+
+        JOptionPane.showConfirmDialog(null, panel, "Facturación", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, icono);
     }
 }
