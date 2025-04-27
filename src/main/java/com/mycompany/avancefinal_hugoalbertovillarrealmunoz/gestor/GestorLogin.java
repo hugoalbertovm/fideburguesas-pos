@@ -1,5 +1,7 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Cajero;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.interfaz.InterfazLogin;
 import java.util.List;
 
 public class GestorLogin {

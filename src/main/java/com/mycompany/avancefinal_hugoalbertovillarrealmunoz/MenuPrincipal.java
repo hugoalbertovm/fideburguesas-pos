@@ -1,5 +1,13 @@
 package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Cajero;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Pedido;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor.GestorRegistro;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor.GestorPedido;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor.GestorLogin;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor.GestorFacturacion;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor.GestorCocina;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.conexion.ConexionBD;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;

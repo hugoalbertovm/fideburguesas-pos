@@ -1,5 +1,7 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Usuario;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Pedido;
 import java.util.ArrayList;
 import java.util.List;
 

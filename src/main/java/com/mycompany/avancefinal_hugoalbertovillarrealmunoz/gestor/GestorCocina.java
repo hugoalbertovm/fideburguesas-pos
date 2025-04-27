@@ -1,5 +1,7 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.interfaz.InterfazCocina;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Pedido;
 import java.awt.Image;
 import javax.swing.*;
 import java.util.List;

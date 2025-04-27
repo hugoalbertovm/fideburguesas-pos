@@ -1,5 +1,6 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.interfaz;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Cajero;
 import javax.swing.*;
 import java.awt.*;
 

@@ -1,4 +1,4 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.cliente;
 
 import java.io.*;
 import java.net.*;

@@ -1,5 +1,11 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Cajero;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.cliente.ClienteCajero;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.interfaz.InterfazPedido;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Pedido;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Producto;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.conexion.ConexionBD;
 import javax.swing.*;
 import java.awt.Image;
 import java.util.List;

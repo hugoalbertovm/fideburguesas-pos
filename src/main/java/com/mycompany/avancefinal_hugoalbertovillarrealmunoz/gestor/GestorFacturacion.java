@@ -1,5 +1,7 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.gestor;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.interfaz.InterfazFacturacion;
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Pedido;
 import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;

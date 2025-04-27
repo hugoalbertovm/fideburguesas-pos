@@ -1,5 +1,6 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo;
 
+import com.mycompany.avancefinal_hugoalbertovillarrealmunoz.modelo.Pedido;
 import javax.swing.*;
 import java.util.List;
 

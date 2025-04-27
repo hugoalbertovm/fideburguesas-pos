@@ -1,4 +1,4 @@
-package com.mycompany.avancefinal_hugoalbertovillarrealmunoz;
+package com.mycompany.avancefinal_hugoalbertovillarrealmunoz.conexion;
 
 import java.sql.*;
 
