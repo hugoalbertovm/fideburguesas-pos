@@ -14,6 +14,7 @@ public class GestorRegistro {
     public void registrarCajero() {
         Cajero nuevoCajero = InterfazRegistro.mostrarRegistroCajero();
         if (nuevoCajero != null) {
+            ConexionBD.insertarUsuario(nuevoCajero.getNombre(), nuevoCajero.getContrasena());
             cajeros.add(nuevoCajero);
             JOptionPane.showMessageDialog(null, "Cajero registrado exitosamente.");
         }

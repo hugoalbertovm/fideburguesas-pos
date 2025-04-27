@@ -15,4 +15,12 @@ public class Usuario {
     public boolean iniciarSesion(String usuario, String contraseña) {
         return this.nombre.equals(usuario) && this.contraseña.equals(contraseña);
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getContrasena() {
+        return contraseña;
+    }
 }

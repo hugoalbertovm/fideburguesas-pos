@@ -17,13 +17,11 @@ public class GestorPedido {
             return;
         }
 
-        // Llamar a la interfaz gráfica
         String[] datos = InterfazPedido.mostrarRegistroPedido();
         if (datos == null) {
-            return; // Si el usuario cancela, no hace nada
+            return;
         }
 
-        // Validar datos
         String cliente = datos[0];
         String producto = datos[1];
         String cantidadStr = datos[2];
@@ -47,13 +45,15 @@ public class GestorPedido {
             return;
         }
 
-        // Crear pedido
         Pedido nuevoPedido = new Pedido(pedidos.size() + 1, cliente);
         for (int i = 0; i < cantidad; i++) {
             nuevoPedido.agregarProducto(new Producto(i + 1, producto, precio, "Comida"));
         }
 
+        ClienteCajero.enviarPedido("Nuevo pedido de cliente: " + cliente);
+
         pedidos.add(nuevoPedido);
+        ConexionBD.insertarPedido("Cliente: " + cliente + ", Producto: " + producto + ", Cantidad: " + cantidad + ", Precio: " + precio);
         JOptionPane.showMessageDialog(null, "Pedido registrado exitosamente.");
     }
 }

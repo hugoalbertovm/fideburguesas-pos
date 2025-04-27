@@ -6,6 +6,9 @@ import java.util.List;
 public class MenuPrincipal {
 
     public static void main(String[] args) {
+        
+        ConexionBD.crearTablas();
+        
         List<Pedido> pedidos = new ArrayList<>();
         List<Cajero> cajeros = new ArrayList<>();
 
