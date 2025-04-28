@@ -35,11 +35,13 @@ public class InterfazLogin {
 
             for (Cajero cajero : cajeros) {
                 if (cajero.iniciarSesion(usuario, contrasena)) {
-                    JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso. Bienvenido, " + usuario + "!");
+                    JOptionPane.showMessageDialog(null, "Inicio de sesión exitoso. Bienvenido, " + usuario + "!", "Inicio de Sesión", JOptionPane.PLAIN_MESSAGE, icono);
+
                     return cajero;
                 }
             }
-            JOptionPane.showMessageDialog(null, "Credenciales incorrectas.");
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas.", "Error de Inicio de Sesión", JOptionPane.PLAIN_MESSAGE, icono);
+
         }
         return null;
     }

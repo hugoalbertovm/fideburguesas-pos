@@ -37,7 +37,7 @@ public class InterfazRegistro {
             String contrasena = new String(contrasenaField.getPassword()).trim();
 
             if (nombre.isEmpty() || usuario.isEmpty() || contrasena.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.");
+                JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.", "Error de Registro", JOptionPane.PLAIN_MESSAGE, icono);
                 return null;
             }
 
